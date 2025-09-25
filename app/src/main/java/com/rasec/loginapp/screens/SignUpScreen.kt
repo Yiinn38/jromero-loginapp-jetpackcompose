@@ -14,6 +14,7 @@ import androidx.navigation.NavController
 import androidx.navigation.compose.rememberNavController
 import com.rasec.loginapp.ui.theme.BackgroundColor
 import com.rasec.loginapp.ui.theme.LoginAppTheme
+import com.rasec.loginapp.ui.theme.LoginScreenRoute
 
 @Composable
 fun SignUpScreen(navController: NavController) {
@@ -28,7 +29,15 @@ fun SignUpScreen(navController: NavController) {
       text = "Soy la pagina signup"
     )
     Button(
-      onClick = { navController.navigate("login") }
+      onClick = {
+        navController.navigate(LoginScreenRoute) {
+          launchSingleTop = true
+          popUpTo(navController.graph.startDestinationId) {
+            saveState = true
+          }
+          restoreState = true
+        }
+      }
     ) {
       Text(
         text = "Ir a login"

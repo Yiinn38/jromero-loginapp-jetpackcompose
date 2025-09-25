@@ -13,6 +13,8 @@ import androidx.compose.ui.Modifier
 import com.rasec.loginapp.screens.LoginScreen
 import com.rasec.loginapp.screens.SignUpScreen
 import com.rasec.loginapp.ui.theme.LoginAppTheme
+import com.rasec.loginapp.ui.theme.LoginScreenRoute
+import com.rasec.loginapp.ui.theme.SignUpScreenRoute
 
 class MainActivity : ComponentActivity() {
   override fun onCreate(savedInstanceState: Bundle?) {
@@ -24,10 +26,10 @@ class MainActivity : ComponentActivity() {
         Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
           NavHost(
             navController = navController,
-            startDestination = "login"
+            startDestination = LoginScreenRoute
           ) {
-            composable("login") { LoginScreen(navController) }
-            composable("signup") { SignUpScreen(navController) }
+            composable<LoginScreenRoute> { LoginScreen(navController) }
+            composable<SignUpScreenRoute> { SignUpScreen(navController) }
           }
         }
       }
