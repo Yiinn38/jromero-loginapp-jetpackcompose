@@ -22,7 +22,7 @@ import com.rasec.loginapp.ui.theme.MediumGray
 import com.rasec.loginapp.ui.theme.White
 
 @Composable
-fun InputText(title: String = "") {
+fun InputText(title: String = "", type: String = "") {
   var email by remember { mutableStateOf("") }
 
   Column(
@@ -43,7 +43,7 @@ fun InputText(title: String = "") {
     TextField(
       value = email,
       onValueChange = { email = it },
-      placeholder = { Text("example@email.com", color = Color.Gray) },
+      placeholder = { Text(type, color = Color.Gray) },
       modifier = Modifier
         .fillMaxWidth(),
       colors = TextFieldDefaults.colors(

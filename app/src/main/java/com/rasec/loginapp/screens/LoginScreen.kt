@@ -1,7 +1,6 @@
 package com.rasec.loginapp.screens
 
 import androidx.compose.foundation.background
-import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
@@ -9,43 +8,32 @@ import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.shape.RoundedCornerShape
-import androidx.compose.material3.Button
-import androidx.compose.material3.ButtonDefaults
-import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextButton
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import coil3.compose.AsyncImage
-import coil3.compose.SubcomposeAsyncImage
 import androidx.compose.ui.draw.clip
-import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
 import androidx.navigation.compose.rememberNavController
+import com.rasec.loginapp.components.ButtonToContinue
 import com.rasec.loginapp.components.HeaderLoginScreen
 import com.rasec.loginapp.components.InputPassword
 import com.rasec.loginapp.components.InputText
 import com.rasec.loginapp.ui.theme.BackgroundColor
-import com.rasec.loginapp.ui.theme.Cloud
 import com.rasec.loginapp.ui.theme.DarkGray
-import com.rasec.loginapp.ui.theme.LightGray
 import com.rasec.loginapp.ui.theme.LoginAppTheme
 import com.rasec.loginapp.ui.theme.SignUpScreenRoute
-import com.rasec.loginapp.ui.theme.White
 
 @Composable
 fun LoginScreen(navController: NavController) {
   Box(
-    modifier = Modifier
-      .fillMaxSize()
+    modifier = Modifier.fillMaxSize()
   ) {
     HeaderLoginScreen()
     Column(
@@ -66,30 +54,9 @@ fun LoginScreen(navController: NavController) {
         fontSize = 36.sp,
         modifier = Modifier.padding(vertical = 40.dp)
       )
-      InputText(title = "Email")
+      InputText(title = "Email", type = "example@email.com")
       InputPassword(title = "Password")
-
-      Button(
-        onClick = { },
-        modifier = Modifier
-          .padding(top = 8.dp)
-          .fillMaxWidth()
-          .clip(RoundedCornerShape(topStart = 16.dp, bottomStart = 16.dp, bottomEnd = 16.dp))
-          .background(DarkGray)
-          .padding(vertical = 2.dp, horizontal = 12.dp)
-          ,
-        colors = ButtonDefaults.buttonColors(
-          containerColor = Color.Transparent,
-          disabledContainerColor = Color.Transparent,
-        )
-      ) {
-        Text(
-          text = "Login",
-          color = White,
-          style = MaterialTheme.typography.displayMedium,
-          fontSize = 14.sp
-        )
-      }
+      ButtonToContinue(buttonTitle = "Login")
 
       Spacer(modifier = Modifier.weight(1f))
 

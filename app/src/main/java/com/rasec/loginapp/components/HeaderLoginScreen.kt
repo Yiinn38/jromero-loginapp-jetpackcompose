@@ -32,7 +32,7 @@ fun HeaderLoginScreen() {
   ) {
     AsyncImage(
       model = "https://wallpapercat.com/w/full/9/5/a/945731-3840x2160-desktop-4k-matte-black-wallpaper-image.jpg",
-      contentDescription = "Imagen portada",
+      contentDescription = "Imagen portada Login",
       contentScale = ContentScale.Crop
     )
     Icon(
