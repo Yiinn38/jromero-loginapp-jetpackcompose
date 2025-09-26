@@ -18,7 +18,25 @@ val poppinsFontFamily = FontFamily(
 
 
 val poppinsTypo = Typography(
-
+  displayLarge = TextStyle(
+    fontWeight = FontWeight.W300,
+    fontFamily = com.rasec.loginapp.ui.theme.poppinsFontFamily,
+    fontSize = 57.sp,
+    lineHeight = 64.sp,
+    letterSpacing = (-0.25).sp
+  ),
+  displayMedium = TextStyle(
+    fontWeight = FontWeight.W300,
+    fontFamily = com.rasec.loginapp.ui.theme.poppinsFontFamily,
+    fontSize = 45.sp,
+    lineHeight = 52.sp
+  ),
+  displaySmall = TextStyle(
+    fontWeight = FontWeight.W300,
+    fontFamily = com.rasec.loginapp.ui.theme.poppinsFontFamily,
+    fontSize = 36.sp,
+    lineHeight = 44.sp
+  ),
   titleLarge = TextStyle(
     fontWeight = FontWeight.W700,
     fontFamily = com.rasec.loginapp.ui.theme.poppinsFontFamily,
@@ -57,24 +75,4 @@ val poppinsTypo = Typography(
     fontSize = 12.sp,
     lineHeight = 16.sp
   ),
-  labelLarge = TextStyle(
-    fontWeight = FontWeight.W700,
-    fontFamily = com.rasec.loginapp.ui.theme.poppinsFontFamily,
-    fontSize = 14.sp,
-    lineHeight = 20.sp,
-    letterSpacing = 0.1.sp
-  ),
-  labelMedium = TextStyle(
-    fontWeight = FontWeight.W700,
-    fontFamily = com.rasec.loginapp.ui.theme.poppinsFontFamily,
-    fontSize = 12.sp,
-    lineHeight = 16.sp,
-    letterSpacing = 0.5.sp
-  ),
-  labelSmall = TextStyle(
-    fontWeight = FontWeight.W700,
-    fontFamily = com.rasec.loginapp.ui.theme.poppinsFontFamily,
-    fontSize = 11.sp,
-    lineHeight = 16.sp
-  )
 )

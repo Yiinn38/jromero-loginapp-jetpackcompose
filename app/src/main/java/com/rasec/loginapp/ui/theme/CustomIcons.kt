@@ -21,7 +21,7 @@ val Cloud: ImageVector
     ).apply {
       path(
         stroke = SolidColor(Color.Black),
-        strokeLineWidth = 3f,
+        strokeLineWidth = 2f,
         strokeLineCap = StrokeCap.Round,
         strokeLineJoin = StrokeJoin.Round
       ) {
