@@ -17,6 +17,7 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.rasec.loginapp.ui.theme.BackgroundColor
+import com.rasec.loginapp.ui.theme.DarkGray
 import com.rasec.loginapp.ui.theme.MediumGray
 import com.rasec.loginapp.ui.theme.White
 
@@ -28,15 +29,15 @@ fun InputText(title: String = "") {
     modifier = Modifier
       .fillMaxWidth()
       .padding(vertical = 10.dp)
+      .clip(RoundedCornerShape(16.dp))
       .background(White)
       .padding(vertical = 8.dp, horizontal = 4.dp)
-      .cl
   ) {
     Text(
       text = title,
-      color = MediumGray,
+      color = DarkGray,
       style = MaterialTheme.typography.bodyMedium,
-      fontSize = 20.sp,
+      fontSize = 16.sp,
       modifier = Modifier.padding(start = 8.dp)
     )
     TextField(

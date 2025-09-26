@@ -1,6 +1,7 @@
 package com.rasec.loginapp.screens
 
 import androidx.compose.foundation.background
+import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
@@ -10,6 +11,8 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.material3.Button
+import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
@@ -36,6 +39,7 @@ import com.rasec.loginapp.ui.theme.DarkGray
 import com.rasec.loginapp.ui.theme.LightGray
 import com.rasec.loginapp.ui.theme.LoginAppTheme
 import com.rasec.loginapp.ui.theme.SignUpScreenRoute
+import com.rasec.loginapp.ui.theme.White
 
 @Composable
 fun LoginScreen(navController: NavController) {
@@ -51,19 +55,41 @@ fun LoginScreen(navController: NavController) {
         .align(Alignment.BottomCenter)
         .clip(RoundedCornerShape(topStart = 40.dp))
         .background(BackgroundColor)
-        .padding(horizontal = 16.dp)
-        .padding(bottom = 12.dp),
-      horizontalAlignment = Alignment.CenterHorizontally
+        .padding(horizontal = 25.dp)
+        .padding(bottom = 16.dp),
+      horizontalAlignment = Alignment.CenterHorizontally,
     ) {
       Text(
         text = "Login",
         color = DarkGray,
         style = MaterialTheme.typography.bodyLarge,
-        fontSize = 32.sp,
+        fontSize = 36.sp,
         modifier = Modifier.padding(vertical = 40.dp)
       )
       InputText(title = "Email")
       InputPassword(title = "Password")
+
+      Button(
+        onClick = { },
+        modifier = Modifier
+          .padding(top = 8.dp)
+          .fillMaxWidth()
+          .clip(RoundedCornerShape(topStart = 16.dp, bottomStart = 16.dp, bottomEnd = 16.dp))
+          .background(DarkGray)
+          .padding(vertical = 2.dp, horizontal = 12.dp)
+          ,
+        colors = ButtonDefaults.buttonColors(
+          containerColor = Color.Transparent,
+          disabledContainerColor = Color.Transparent,
+        )
+      ) {
+        Text(
+          text = "Login",
+          color = White,
+          style = MaterialTheme.typography.displayMedium,
+          fontSize = 14.sp
+        )
+      }
 
       Spacer(modifier = Modifier.weight(1f))
 
@@ -80,7 +106,8 @@ fun LoginScreen(navController: NavController) {
       ) {
         Text(
           text = "Don't have any account? Sing Up",
-          style = MaterialTheme.typography.titleSmall,
+          style = MaterialTheme.typography.bodySmall,
+          fontSize = 16.sp,
           color = DarkGray,
         )
       }
